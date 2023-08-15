@@ -1,0 +1,12 @@
+parsers: # array
+  - reg: ^https://.+$
+    yaml:
+      prepend-rules:  # 在rules最前面增加规则
+        - RULE-SET,SteamSelf,GLOBAL
+      mix-rule-providers:
+        SteamSelf:
+          type: http
+          behavior: classical
+          url: 'https://gist.githubusercontent.com/RabbitFH/dc28fee5c5bf44a000b9538295fa6193/raw/3104266c6f4baf7de069866031743c44ad3245c1/SteamSelf.yaml'
+          path: ./Rules/SteamSelf.yaml
+          interval: 86400
